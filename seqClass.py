@@ -11,19 +11,19 @@ if len(sys.argv) == 1:
     parser.print_help()
     sys.exit(1)
 
-args = parser.parse_args() #some explanations blablabla
+args = parser.parse_args() 
 
 args.seq= args.seq.upper()
 if re.search('^[ACGTU]+$', args.seq):
-    if re.search('T', args.seq) and not re.search('U', args.seq):
+    if re.search('T', args.seq) and not re.search('U', args.seq): #Ensure T exclusivity
         print ('The sequence is DNA')
-    elif re.search('U', args.seq) and not re.search('T', args.seq):
+    elif re.search('U', args.seq) and not re.search('T', args.seq): #Ensure U exclusivity
         print ('The sequence is RNA')
-    elif re.search('T', args.seq) and re.search('U', args.seq):
+    elif re.search('T', args.seq) and re.search('U', args.seq): #In case both are present print an error message.
         print ('ERROR: The sequence contains both T and U')
-    else:
+    else: #for other sequences that could be DNA or RNA (for example AGGAGAG) print that both are possible
         print ('The sequence can be DNA or RNA')
-else:
+else: #for the rest print that its neither DNA or RNA
     print ('The sequence is not DNA nor RNA')
 
 if args.motif:
