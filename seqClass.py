@@ -30,6 +30,6 @@ if args.motif:
     if re.search(args.motif, args.seq):
         print("TEST FOUND")
     else:
-        print("NOT FOUND")
+        print("TEST NOT FOUND")
 
 
