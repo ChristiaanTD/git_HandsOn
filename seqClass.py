@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import sys, re
 from argparse import ArgumentParser
@@ -30,9 +30,9 @@ if args.motif:
     args.motif = args.motif.upper()
     print(f'Motif search enabled: looking for motif "{args.motif}" in sequence "{args.seq}"... ', end = '')
     if re.search(args.motif, args.seq):
-        print(" EDIT 2 FOUND")
+        print("MOTIF FOUND")
 
     else:
-        print("TEST NOT FOUND")
+        print("MOTIF NOT FOUND")
 
 
